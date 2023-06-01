@@ -1,4 +1,4 @@
-# Ex No.:3
+# Ex No.3
 
 # <p align="center"> Third person character mesh and add animations</p>
 
@@ -55,8 +55,8 @@ Check the logic in the Character Blueprint for any references to specific animat
 Remember to save and compile your Blueprints after making changes. You can also further customize the character's behavior, add additional animations, or implement complex animation systems based on your specific game requirements.
 
 ## Output:
-![WhatsApp Image 2023-06-01 at 9 36 09 AM](https://github.com/durga46/EX1.game-programming/assets/75235704/f463c951-c057-4019-9615-dc2342281bf2)
-
+![1](https://github.com/durga46/Exp2.GameProgramming/assets/75235704/7587a4d7-bbe0-4478-878a-2d5e09252b39)
+![2](https://github.com/durga46/Exp2.GameProgramming/assets/75235704/14e47b35-0174-42e3-8940-c646fb10d875)
 
 ## Result:
 
