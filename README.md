@@ -1,64 +1,58 @@
 # Ex No :02
 
-# <p align="center">  Player movement</p>
+# <p align="center"> Third person character mesh and add animations</p>
 
 ## Aim:
-To Create a player movement using pawn,collectable,player health and score.
+To Change the third person character mesh and add animations by using Unreal Engine.
 
 ## Software Required:
 Unreal Engine.
 
 ## Procedure:
-To create a player movement using a pawn, collectibles, player health, and score in Unreal Engine, you can follow these steps:
+To change the third person character mesh and add animations in Unreal Engine, you can follow these steps:
 
-### Create the Pawn Blueprint:
+### Replace the Character Mesh:
 
-In Unreal Engine, go to the Content Browser and right-click to create a new Blueprint class.
-Choose "Pawn" as the parent class and name it "PlayerPawn" or any desired name.
-Open the PlayerPawn Blueprint and go to the Event Graph.
+In Unreal Engine, go to the Content Browser and find the new character mesh you want to use.
+Right-click on the new character mesh and choose "Asset Actions" > "Create Blueprint using this" to create a Blueprint based on the new mesh.
+Open the new Blueprint and go to the Event Graph.
 
-### Implement Player Movement:
+### Set up Animation Blueprint:
 
-In the Event Graph, right-click and search for "InputAxis MoveForward" and "InputAxis MoveRight" nodes.
-Connect these nodes to the corresponding inputs of the "Add Movement Input" node.
-Connect the "MoveForward" node to the "Forward/Backward" input of "Add Movement Input" and "MoveRight" to the "Right/Left" input.
-Connect the "Add Movement Input" node to the "Set Actor Location" node, connecting the output execution pin to the input execution pin of "Set Actor Location."
+In the Event Graph of the new Blueprint, right-click and search for "Update Animation" and "Get Mesh" nodes.
+Connect the "Get Mesh" node to the "Target" input of "Update Animation" node.
+Right-click and search for "Set Anim Instance Class" node and connect it to the "Update Animation" node.
+In the "Set Anim Instance Class" node, choose or create an Animation Blueprint for your new character mesh.
 
-### Implement Collectibles:
+### Create Animation Blueprint:
 
-Create a new Blueprint class, choose "Actor" as the parent class, and name it "Collectible" or any desired name.
-Add a static mesh component to the Collectible Blueprint and assign it a mesh or shape
-.
-### Implement collision handling to detect when the player touches the collectible:
-Right-click in the Event Graph and search for "On Component Begin Overlap" node for the static mesh component.
-Connect the "On Component Begin Overlap" node to a custom event, e.g., "Collect."
-Inside the "Collect" event, add logic to increment the player's score and destroy the collectible actor.
+In the Content Browser, right-click and choose "Animation" > "Animation Blueprint" to create a new Animation Blueprint.
+Open the Animation Blueprint and go to the Event Graph.
+Right-click and search for "Event Blueprint Update Animation" node. This node will execute on every frame to update the animations.
+Connect the output execution pin of "Event Blueprint Update Animation" to the input execution pin of "Update Animation" in the Character Blueprint.
 
+### Add Animations:
 
-### Implement Player Health:
+In the Animation Blueprint, you can create or import animations for various character actions, such as idle, walk, run, jump, etc.
+Use animation nodes like "Play Montage" or "Play Animation" to trigger specific animations based on the desired character behavior.
+Connect the output execution pins of these animation nodes to the appropriate input execution pins in the Animation Blueprint.
 
-Inside the PlayerPawn Blueprint, create a variable named "Health" of type float.
-Add logic to handle player health, such as decreasing the health when the player collides with enemies or other damaging objects.
-You can use "On Component Begin Overlap" nodes or custom events to detect collisions and decrement the health variable.
-Implement logic to check if the player's health reaches zero or below, and handle the game over state accordingly.
+### Configure Animation Blueprint:
 
-### Implement Score:
+In the Animation Blueprint, you can modify the behavior and blending of animations using various nodes and transitions.
+Use animation state machines to define different animation states and transitions between them.
+Adjust blending, layering, and animation curves to achieve the desired character animation behavior.
 
-Inside the PlayerPawn Blueprint, create a variable named "Score" of type integer.
-Increment the score variable whenever the player collects a collectible.
-You can add a text widget to the UI and update it with the current score using the "Set Text" node and "Score" variable.
+### Assign the New Character Blueprint:
 
+In your game level or wherever you want to use the character, drag and drop the new character Blueprint from the Content Browser into the scene.
+Remove or disable the default third person character Blueprint if it's still present in the scene.
 
-### Spawning Collectibles:
+### Adjust Character Blueprint Variables and Logic:
 
-In your game level Blueprint or a separate Blueprint, implement logic to spawn collectibles at regular intervals or specific locations.
-You can use the "Spawn Actor" node to create instances of the Collectible Blueprint in the world.
-
-
-### Player Input:
-
-In the PlayerPawn Blueprint, you can handle other player inputs such as jump, crouch, or any additional movements based on your game requirements.
-Remember to save and compile your Blueprints after making changes. You can also add additional functionalities and customize the behavior of collectibles, player health, and scoring based on your game design.
+If your new character mesh has different bone structure or names compared to the default third person character, you may need to update references in the Character Blueprint.
+Check the logic in the Character Blueprint for any references to specific animations or sockets and update them accordingly.
+Remember to save and compile your Blueprints after making changes. You can also further customize the character's behavior, add additional animations, or implement complex animation systems based on your specific game requirements.
 
 ## Output:
 ![WhatsApp Image 2023-06-01 at 9 36 09 AM](https://github.com/durga46/EX1.game-programming/assets/75235704/f463c951-c057-4019-9615-dc2342281bf2)
@@ -66,7 +60,7 @@ Remember to save and compile your Blueprints after making changes. You can also 
 
 ## Result:
 
-Thus to Create a player movement using pawn,collectable,player health and score done successfully in Unreal Engine
+Thus to Change the third person character mesh and add animations is done successfully in Unreal Engine.
 
 
 
