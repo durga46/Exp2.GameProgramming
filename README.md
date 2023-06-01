@@ -1,4 +1,4 @@
-# Ex No 🕥3
+# Ex No.:3
 
 # <p align="center"> Third person character mesh and add animations</p>
 
